@@ -1,5 +1,4 @@
 import { useState } from "react";
-import DashboardLayout from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -489,7 +488,7 @@ const Sites = () => {
   };
 
   return (
-    <DashboardLayout>
+    <>
       <div className="space-y-6 p-4 sm:p-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
@@ -993,7 +992,7 @@ const Sites = () => {
           </SheetContent>
         </Sheet>
       </div>
-    </DashboardLayout>
+    </>
   );
 };
 

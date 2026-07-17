@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import DashboardLayout from "@/components/DashboardLayout";
 import {
   Card,
   CardContent,
@@ -166,17 +165,15 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <DashboardLayout>
-        <div className="flex items-center justify-center h-96">
-          <Loader2 className="w-10 h-10 animate-spin text-primary" />
-          <span className="ml-4 text-xl">Loading dashboard...</span>
-        </div>
-      </DashboardLayout>
+      <div className="flex items-center justify-center h-96">
+        <Loader2 className="w-10 h-10 animate-spin text-primary" />
+        <span className="ml-4 text-xl">Loading dashboard...</span>
+      </div>
     );
   }
 
   return (
-    <DashboardLayout>
+    <>
       <div className="space-y-8 p-4 sm:p-6 lg:p-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
@@ -272,7 +269,7 @@ const Dashboard = () => {
           </Card>
         </div>
       </div>
-    </DashboardLayout>
+    </>
   );
 };
 

@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import DashboardLayout from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -504,7 +502,7 @@ export default function DailyAttendance() {
 
 
   return (
-    <DashboardLayout>
+    <>
       <div className="container mx-auto p-6 space-y-8">
         <div className="flex justify-between items-center">
           <h1 className="text-4xl font-bold">Daily Attendance</h1>
@@ -845,6 +843,6 @@ export default function DailyAttendance() {
           </Card>
         </div>
       </div>
-    </DashboardLayout >
+    </>
   );
 }
