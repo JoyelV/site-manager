@@ -11,6 +11,7 @@ import Attendance from "./pages/Attendance";
 import Salary from "./pages/Salary";
 import NotFound from "./pages/NotFound";
 import ResetPassword from "./pages/ResetPassword";
+import DashboardLayout from "./components/DashboardLayout";
 
 const queryClient = new QueryClient();
 
@@ -30,11 +31,15 @@ const App = () => (
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-          <Route path="/sites" element={<ProtectedRoute><Sites /></ProtectedRoute>} />
-          <Route path="/workers" element={<ProtectedRoute><Workers /></ProtectedRoute>} />
-          <Route path="/attendance" element={<ProtectedRoute><Attendance /></ProtectedRoute>} />
-          <Route path="/salary" element={<ProtectedRoute><Salary /></ProtectedRoute>} />
+          
+          <Route element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/sites" element={<Sites />} />
+            <Route path="/workers" element={<Workers />} />
+            <Route path="/attendance" element={<Attendance />} />
+            <Route path="/salary" element={<Salary />} />
+          </Route>
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

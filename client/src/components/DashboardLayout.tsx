@@ -1,6 +1,6 @@
 // src/components/DashboardLayout.tsx
 import { ReactNode, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import {
   Building2,
   Users,
@@ -15,7 +15,7 @@ import { Button } from "./ui/button";
 import { toast } from "@/hooks/use-toast";
 
 interface DashboardLayoutProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
@@ -47,7 +47,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-secondary/30">
+    <div className="h-screen flex flex-col lg:flex-row bg-secondary/30 overflow-hidden">
       {/* Mobile Header */}
       <div className="lg:hidden flex items-center justify-between p-4 bg-card border-b border-border">
         <div className="flex items-center gap-3">
@@ -69,7 +69,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       </div>
 
       {/* Sidebar - Desktop */}
-      <aside className="hidden lg:flex lg:w-64 bg-card border-r border-border flex-col">
+      <aside className="hidden lg:flex lg:w-64 bg-card border-r border-border flex-col h-full overflow-y-auto">
         <div className="p-6 border-b border-border">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
@@ -164,8 +164,8 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       )}
 
       {/* Main Content */}
-      <main className="flex-1 overflow-auto">
-        <div className="p-4 sm:p-6 lg:p-8">{children}</div>
+      <main className="flex-1 overflow-y-auto">
+        <div className="p-4 sm:p-6 lg:p-8">{children || <Outlet />}</div>
       </main>
     </div>
   );

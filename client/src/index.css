@@ -118,3 +118,26 @@ All colors MUST be HSL.
     font-family: 'Inter', sans-serif;
   }
 }
+
+@layer utilities {
+  .sticky-header th {
+    position: sticky !important;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .sticky-header th:not([class*="bg-"]) {
+    background-color: hsl(var(--card)) !important;
+  }
+
+  .sticky-header tr:last-child td {
+    position: sticky !important;
+    bottom: 0;
+    z-index: 10;
+    border-top: 2px solid hsl(var(--border));
+  }
+
+  .sticky-header tr:last-child td:not([class*="bg-"]) {
+    background-color: hsl(var(--muted)) !important;
+  }
+}

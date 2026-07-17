@@ -1,0 +1,11 @@
+{
+  "name": "site-manager-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "lint": "npm run lint --prefix client",
+    "preview": "npm run preview --prefix client"
+  }
+}
