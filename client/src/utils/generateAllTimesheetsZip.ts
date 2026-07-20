@@ -145,7 +145,14 @@ export const downloadAllTimesheetsAsZip = async (
     const totalAbsent = calendarData.filter((r) => r.project === "Absent").length;
     const subTotal = totalNormal + totalOt;
 
-    const yPos = (doc as any).lastAutoTable?.finalY ?? 50;
+    let yPos = (doc as any).lastAutoTable?.finalY ?? 50;
+    
+    // Page height is 210mm. If the table ends near the bottom, we add a new page to prevent cutoff.
+    if (yPos > 150) {
+      doc.addPage();
+      yPos = 20; // reset yPos for the new page
+    }
+
     const leftX = 12;
     let totalsY = yPos + 4;
 
@@ -178,8 +185,8 @@ export const downloadAllTimesheetsAsZip = async (
     doc.setDrawColor(0);
     doc.setLineWidth(0.3);
 
-    // Signature
-    const sigY = 150;
+    // Signature - positioned dynamically below the totals to avoid overlaps
+    const sigY = Math.max(150, totalsY + 15);
     doc.setFontSize(10);
     doc.text("Authorized Signature ___________________", 220, sigY);
 
