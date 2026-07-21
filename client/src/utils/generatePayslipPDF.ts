@@ -89,7 +89,7 @@ export const generatePayslipPDF = async (
           adv.amount.toFixed(2)
         ])
         : [["Advance Deducted", (record.advance || 0).toFixed(2)]]), // Fallback if no details
-      ["Medical/Petty Cash (Deduction)", (record.otherDeduction || 0).toFixed(2)], // Add Medical/Petty Cash
+      ["Medical/Petty Cash/Site Allowance", (record.otherDeduction || 0).toFixed(2)], // Add Medical/Petty Cash
       ["Pending Advance Balance", (record.advancePending || 0).toFixed(2)], // Add Pending Balance
       ["Current Month Payable", record.totalSalaryPayable.toFixed(2)],
       ["Previous Pending", (record.prevPending || 0).toFixed(2)],
