@@ -118,7 +118,7 @@ const Salary = () => {
       const prevPending = r.prevPending ?? 0;
 
       const currentEarnings = (r as any).currentEarnings ?? r.totalSalaryPayable;
-      const totalDue = currentEarnings - advances - other + prevPending;
+      const totalDue = currentEarnings - advances + other + prevPending;
 
       const totalDebt = (r.advancePending || 0) + (r.advance || 0);
       const liveAdvancePending = Math.max(0, totalDebt - advances);
@@ -198,8 +198,8 @@ const Salary = () => {
         const prevPending = r.prevPending ?? 0;
 
         const currentEarnings = (r as any).currentEarnings ?? r.totalSalaryPayable;
-        // Total Due = Earnings - Advance(Manual/Calc) - Other(Deduction) + PrevPending
-        const totalDue = currentEarnings - advances - other + prevPending;
+        // Total Due = Earnings - Advance(Manual/Calc) + Other(Allowance) + PrevPending
+        const totalDue = currentEarnings - advances + other + prevPending;
         const pending = totalDue - (wps + cash);
 
         return {
@@ -224,7 +224,7 @@ const Salary = () => {
           "Absent Ded.": Number(r.absentDeduction.toFixed(2)),
           "Earned Amount": Number((r.currentEarnings || 0).toFixed(2)),
           "Advance Deducted": Number(advances.toFixed(2)),
-          "Medical/Petty Cash": Number(other.toFixed(2)),
+          "Medical/Petty Cash/Site Allowance": Number(other.toFixed(2)),
           "Advance Pending": Number((r.advancePending || 0).toFixed(2)),
           "Prev. Pending": Number(prevPending.toFixed(2)),
           "Total Due": Number(totalDue.toFixed(2)),
@@ -255,7 +255,7 @@ const Salary = () => {
         "Absent Ded.": Number(computedTotals.totalAbsentDeduction.toFixed(2)),
         "Earned Amount": Number((computedTotals.totalCurrentEarnings || 0).toFixed(2)),
         "Advance Deducted": Number(computedTotals.totalAdvanceDeduction.toFixed(2)),
-        "Medical/Petty Cash": Number((computedTotals.totalOtherDeduction || 0).toFixed(2)),
+        "Medical/Petty Cash/Site Allowance": Number((computedTotals.totalOtherDeduction || 0).toFixed(2)),
         "Advance Pending": Number((computedTotals.totalAdvancePending || 0).toFixed(2)),
         "Prev. Pending": Number(computedTotals.totalPrevPending.toFixed(2)),
         "Total Due": Number(computedTotals.totalPayroll.toFixed(2)),
@@ -368,7 +368,7 @@ const Salary = () => {
                       <TableHead className="text-right bg-yellow-50">Absent Ded.</TableHead>
                       <TableHead className="text-right bg-green-50">Earned Amount</TableHead>
                       <TableHead className="text-right bg-orange-50">Advance Deducted</TableHead>
-                      <TableHead className="text-right bg-orange-50">Medical/Petty Cash</TableHead>
+                      <TableHead className="text-right bg-orange-50">Medical/Petty Cash/Site Allowance</TableHead>
                       <TableHead className="text-right bg-orange-100">Advance Pending</TableHead>
                       <TableHead className="text-right bg-purple-50">Prev. Pending</TableHead>
                       <TableHead className="text-right font-bold">Total Due</TableHead>
@@ -388,8 +388,8 @@ const Salary = () => {
                       const prevPending = r.prevPending ?? 0;
 
                       const currentEarnings = (r as any).currentEarnings ?? r.totalSalaryPayable;
-                      // Logic Revert: Medical (other) SUBTRACTS from Total Due
-                      const totalDue = currentEarnings - advances - other + prevPending;
+                      // Medical/Petty Cash/Site Allowance ADDED to Total Due
+                      const totalDue = currentEarnings - advances + other + prevPending;
 
                       // Live Advance Pending Calc: 
                       // Original Total Debt = Original Pending Balance + Original Calculated Advance
@@ -537,7 +537,7 @@ const Salary = () => {
                                 const prevPending = r.prevPending ?? 0;
 
                                 const currentEarnings = (r as any).currentEarnings ?? r.totalSalaryPayable;
-                                const totalDue = currentEarnings - advances - other + prevPending;
+                                const totalDue = currentEarnings - advances + other + prevPending;
                                 const pending = totalDue - (wps + cash);
 
                                 generatePayslipPDF({
