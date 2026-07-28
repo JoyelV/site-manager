@@ -1015,7 +1015,7 @@ const Workers = () => {
                             {worker.employeeNo}
                           </TableCell>
                           <TableCell>
-                            {worker.firstName} {worker.lastName}
+                            {worker.employeeNo}
                             {worker.isActive === false && (
                               <span className="ml-2 px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-[10px] font-medium">
                                 Inactive
