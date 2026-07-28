@@ -204,8 +204,8 @@ const Salary = () => {
 
         return {
           "S/No": i + 1,
-          "Given Name": r.givenName,
-          "Surname": r.surname,
+          "Given Name": r.employNo,
+          "Surname": r.employNo,
           "Designation": r.designation || "",
           "Company Name": r.companyName || "AL FAHEEM ELECTROMECHANICAL WORKS",
           "Employ no": r.employNo,
@@ -403,8 +403,8 @@ const Salary = () => {
                       return (
                         <TableRow key={r._id}>
                           <TableCell>{i + 1}</TableCell>
-                          <TableCell>{r.givenName}</TableCell>
-                          <TableCell>{r.surname}</TableCell>
+                          <TableCell>{r.employNo}</TableCell>
+                          <TableCell>{r.employNo}</TableCell>
                           <TableCell>{r.employNo}</TableCell>
                           <TableCell className="text-right">{r.basicSalary.toFixed(2)}</TableCell>
                           <TableCell className="text-right">{r.allowance.toFixed(2)}</TableCell>
