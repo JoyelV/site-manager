@@ -803,12 +803,12 @@ const Sites = () => {
                       {sites.map((site) => (
                         <TableRow key={site._id}>
                           <TableCell className="font-medium">
-                            {site.clientName}
+                            {/* {site.clientName} */}
                             {site.isActive === false && (
                               <Badge variant="destructive" className="ml-2 px-1 text-[10px]">Inactive</Badge>
                             )}
                           </TableCell>
-                          <TableCell>{site.siteRefName}</TableCell>
+                          <TableCell>{/* {site.siteRefName} */}</TableCell>
                           <TableCell>{site.location}</TableCell>
                           <TableCell>{site.lpoNo || "-"}</TableCell>
                           <TableCell>

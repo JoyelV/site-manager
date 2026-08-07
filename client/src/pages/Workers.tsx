@@ -1012,10 +1012,10 @@ const Workers = () => {
                       {workers.map((worker) => (
                         <TableRow key={worker._id}>
                           <TableCell className="font-medium">
-                            {worker.employeeNo}
+                            {/* {worker.employeeNo} */}
                           </TableCell>
                           <TableCell>
-                            {worker.employeeNo}
+                            {/* {worker.employeeNo} */}
                             {worker.isActive === false && (
                               <span className="ml-2 px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-[10px] font-medium">
                                 Inactive
