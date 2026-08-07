@@ -403,9 +403,9 @@ const Salary = () => {
                       return (
                         <TableRow key={r._id}>
                           <TableCell>{i + 1}</TableCell>
-                          <TableCell>{r.employNo}</TableCell>
-                          <TableCell>{r.employNo}</TableCell>
-                          <TableCell>{r.employNo}</TableCell>
+                          <TableCell>{/* {r.employNo} */}</TableCell>
+                          <TableCell>{/* {r.employNo} */}</TableCell>
+                          <TableCell>{/* {r.employNo} */}</TableCell>
                           <TableCell className="text-right">{r.basicSalary.toFixed(2)}</TableCell>
                           <TableCell className="text-right">{r.allowance.toFixed(2)}</TableCell>
                           <TableCell className="text-right">{r.totalSalary.toFixed(2)}</TableCell>
