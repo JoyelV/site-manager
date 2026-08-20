@@ -754,15 +754,15 @@ export default function DailyAttendance() {
                         {records.map((r) => (
                           <TableRow key={r._id}>
                             <TableCell className="font-medium">
-                              {r.worker.firstName} {r.worker.lastName}
-                              <span className="text-muted-foreground text-sm ml-1">
+                              {/* {r.worker.firstName} {r.worker.lastName} */}
+                              {/* <span className="text-muted-foreground text-sm ml-1">
                                 ({r.worker.employeeNo})
-                              </span>
+                              </span> */}
                             </TableCell>
                             <TableCell>
                               <div className="flex flex-col gap-1">
                                 {r.details.map((d: any, idx: number) => (
-                                  <div key={idx}>{d.siteName}</div>
+                                  <div key={idx}>{/* {d.siteName} */}</div>
                                 ))}
                               </div>
                             </TableCell>

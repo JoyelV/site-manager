@@ -406,21 +406,21 @@ const Salary = () => {
                           <TableCell>{/* {r.employNo} */}</TableCell>
                           <TableCell>{/* {r.employNo} */}</TableCell>
                           <TableCell>{/* {r.employNo} */}</TableCell>
-                          <TableCell className="text-right">{r.basicSalary.toFixed(2)}</TableCell>
-                          <TableCell className="text-right">{r.allowance.toFixed(2)}</TableCell>
-                          <TableCell className="text-right">{r.totalSalary.toFixed(2)}</TableCell>
-                          <TableCell className="text-right bg-blue-50">{r.totalHrInclOT}</TableCell>
-                          <TableCell className="text-right bg-blue-50">{r.normalHrExcOT}</TableCell>
-                          <TableCell className="text-right bg-blue-100">{r.normalOtHr}</TableCell>
-                          <TableCell className="text-right bg-blue-100">{r.sundayOtHr}</TableCell>
-                          <TableCell className="text-right text-red-600">{r.absent}</TableCell>
-                          <TableCell className="text-right">{r.otAedPerHrNormal.toFixed(2)}</TableCell>
-                          <TableCell className="text-right">{r.otAedPerHrSunday.toFixed(2)}</TableCell>
-                          <TableCell className="text-right bg-blue-100">{r.totalOtAed.toFixed(2)}</TableCell>
-                          <TableCell className="text-right">{r.perDayAed.toFixed(2)}</TableCell>
-                          <TableCell className="text-right bg-yellow-50">{r.absentDeduction.toFixed(2)}</TableCell>
+                          <TableCell className="text-right">{/* {r.basicSalary.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right">{/* {r.allowance.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right">{/* {r.totalSalary.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right bg-blue-50">{/* {r.totalHrInclOT} */}</TableCell>
+                          <TableCell className="text-right bg-blue-50">{/* {r.normalHrExcOT} */}</TableCell>
+                          <TableCell className="text-right bg-blue-100">{/* {r.normalOtHr} */}</TableCell>
+                          <TableCell className="text-right bg-blue-100">{/* {r.sundayOtHr} */}</TableCell>
+                          <TableCell className="text-right text-red-600">{/* {r.absent} */}</TableCell>
+                          <TableCell className="text-right">{/* {r.otAedPerHrNormal.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right">{/* {r.otAedPerHrSunday.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right bg-blue-100">{/* {r.totalOtAed.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right">{/* {r.perDayAed.toFixed(2)} */}</TableCell>
+                          <TableCell className="text-right bg-yellow-50">{/* {r.absentDeduction.toFixed(2)} */}</TableCell>
                           <TableCell className="text-right bg-green-50">
-                            {(r.currentEarnings || 0).toFixed(2)}
+                            {/* {(r.currentEarnings || 0).toFixed(2)} */}
                           </TableCell>
 
                           {/* Advance Input - Manual Override */}
@@ -460,15 +460,15 @@ const Salary = () => {
                           </TableCell>
 
                           <TableCell className="text-right bg-orange-100">
-                            {liveAdvancePending > 0 ? liveAdvancePending.toFixed(2) : "-"}
+                            {/* {liveAdvancePending > 0 ? liveAdvancePending.toFixed(2) : "-"} */}
                           </TableCell>
 
                           <TableCell className="text-right bg-purple-50">
-                            {r.prevPending > 0 ? Number(r.prevPending).toFixed(2) : '-'}
+                            {/* {r.prevPending > 0 ? Number(r.prevPending).toFixed(2) : '-'} */}
                           </TableCell>
 
                           <TableCell className="text-right font-bold">
-                            {totalDue.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                            {/* {totalDue.toLocaleString('en-US', { minimumFractionDigits: 2 })} */}
                           </TableCell>
 
                           {/* WPS Input */}
@@ -508,7 +508,7 @@ const Salary = () => {
                           </TableCell>
 
                           <TableCell className="text-right font-bold text-red-600">
-                            {pending.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+                            {/* {pending.toLocaleString('en-US', { minimumFractionDigits: 2 })} */}
                           </TableCell>
 
                           <TableCell className="text-right space-x-2">
@@ -564,9 +564,9 @@ const Salary = () => {
                     {/* TOTAL ROW */}
                     <TableRow className="font-bold bg-muted">
                       <TableCell colSpan={4}>TOTAL</TableCell>
-                      <TableCell className="text-right">{computedTotals.totalBasicSalary.toFixed(2)}</TableCell>
-                      <TableCell className="text-right">{computedTotals.totalAllowance.toFixed(2)}</TableCell>
-                      <TableCell className="text-right">{computedTotals.totalSalary.toFixed(2)}</TableCell>
+                      <TableCell className="text-right">{/* {computedTotals.totalBasicSalary.toFixed(2)} */}</TableCell>
+                      <TableCell className="text-right">{/* {computedTotals.totalAllowance.toFixed(2)} */}</TableCell>
+                      <TableCell className="text-right">{/* {computedTotals.totalSalary.toFixed(2)} */}</TableCell>
                       <TableCell></TableCell>
                       <TableCell></TableCell>
                       <TableCell></TableCell>
@@ -574,29 +574,29 @@ const Salary = () => {
                       <TableCell></TableCell>
                       <TableCell></TableCell>
                       <TableCell></TableCell>
-                      <TableCell className="text-right bg-blue-100">{computedTotals.totalOtAed.toFixed(2)}</TableCell>
+                      <TableCell className="text-right bg-blue-100">{/* {computedTotals.totalOtAed.toFixed(2)} */}</TableCell>
                       <TableCell></TableCell>
-                      <TableCell className="text-right bg-yellow-50">{computedTotals.totalAbsentDeduction.toFixed(2)}</TableCell>
+                      <TableCell className="text-right bg-yellow-50">{/* {computedTotals.totalAbsentDeduction.toFixed(2)} */}</TableCell>
                       <TableCell className="text-right bg-green-50">
-                        {Number(computedTotals.totalCurrentEarnings || 0).toFixed(2)}
+                        {/* {Number(computedTotals.totalCurrentEarnings || 0).toFixed(2)} */}
                       </TableCell>
                       <TableCell className="text-right bg-orange-50">
-                        {Number(computedTotals.totalAdvanceDeduction).toFixed(2)}
+                        {/* {Number(computedTotals.totalAdvanceDeduction).toFixed(2)} */}
                       </TableCell>
                       <TableCell className="text-right bg-orange-50">
-                        {Number(computedTotals.totalOtherDeduction).toFixed(2)}
+                        {/* {Number(computedTotals.totalOtherDeduction).toFixed(2)} */}
                       </TableCell>
                       <TableCell className="text-right bg-orange-100">
-                        {Number(computedTotals.totalAdvancePending || 0).toFixed(2)}
+                        {/* {Number(computedTotals.totalAdvancePending || 0).toFixed(2)} */}
                       </TableCell>
                       <TableCell className="text-right bg-purple-50">
-                        {Number(computedTotals.totalPrevPending).toFixed(2)}
+                        {/* {Number(computedTotals.totalPrevPending).toFixed(2)} */}
                       </TableCell>
-                      <TableCell className="text-right">{Number(computedTotals.totalPayroll).toFixed(2)}</TableCell>
-                      <TableCell className="text-right">{Number(computedTotals.totalWps).toFixed(2)}</TableCell>
-                      <TableCell className="text-right">{Number(computedTotals.totalCash).toFixed(2)}</TableCell>
+                      <TableCell className="text-right">{/* {Number(computedTotals.totalPayroll).toFixed(2)} */}</TableCell>
+                      <TableCell className="text-right">{/* {Number(computedTotals.totalWps).toFixed(2)} */}</TableCell>
+                      <TableCell className="text-right">{/* {Number(computedTotals.totalCash).toFixed(2)} */}</TableCell>
                       <TableCell className="text-right text-red-600">
-                        {Number(computedTotals.totalPending).toFixed(2)}
+                        {/* {Number(computedTotals.totalPending).toFixed(2)} */}
                       </TableCell>
                       <TableCell></TableCell>
                     </TableRow>
