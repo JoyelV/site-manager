@@ -809,10 +809,10 @@ const Sites = () => {
                             )}
                           </TableCell>
                           <TableCell>{/* {site.siteRefName} */}</TableCell>
-                          <TableCell>{site.location}</TableCell>
-                          <TableCell>{site.lpoNo || "-"}</TableCell>
+                          <TableCell>{/* {site.location} */}</TableCell>
+                          <TableCell>{/* {site.lpoNo || "-"} */}</TableCell>
                           <TableCell>
-                            <Badge
+                            {/* <Badge
                               variant={
                                 site.lpoStatus === "Received"
                                   ? "default"
@@ -820,9 +820,9 @@ const Sites = () => {
                               }
                             >
                               {site.lpoStatus}
-                            </Badge>
+                            </Badge> */}
                           </TableCell>
-                          <TableCell>{site.siteInChargeName}</TableCell>
+                          <TableCell>{/* {site.siteInChargeName} */}</TableCell>
                           <TableCell className="text-right space-x-2">
                             <Button
                               variant="outline"
@@ -968,16 +968,16 @@ const Sites = () => {
                             {siteStatsData.workers.map((w: any) => (
                               <TableRow key={w._id}>
                                 <TableCell className="font-medium">
-                                  {w.firstName} {w.lastName}
+                                  {/* {w.firstName} {w.lastName} */}
                                   <span className="text-muted-foreground text-xs block">
-                                    {w.employeeNo}
+                                    {/* {w.employeeNo} */}
                                   </span>
                                 </TableCell>
                                 <TableCell className="text-center font-semibold">
-                                  {w.daysWorked}
+                                  {/* {w.daysWorked} */}
                                 </TableCell>
                                 <TableCell className="text-right font-semibold text-blue-600">
-                                  {w.netHours || 0} hrs
+                                  {/* {w.netHours || 0} hrs */}
                                 </TableCell>
                               </TableRow>
                             ))}
