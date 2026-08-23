@@ -113,8 +113,11 @@ const Dashboard = () => {
             const monthRecords: DailyRecord[] = Array.isArray(rangeJson) ? rangeJson : (rangeJson.records || []);
 
             const workerDays = monthRecords.reduce((acc: Record<string, number>, r) => {
-              if (r.status > 0) {
-                acc[r.worker._id] = (acc[r.worker._id] || 0) + r.status;
+              if (r && r.status > 0 && r.worker) {
+                const workerId = typeof r.worker === "object" ? r.worker._id : String(r.worker);
+                if (workerId) {
+                  acc[workerId] = (acc[workerId] || 0) + r.status;
+                }
               }
               return acc;
             }, {});
@@ -263,6 +266,7 @@ const Dashboard = () => {
                 </div>
               ) : (
                 <p className="text-center py-16 text-muted-foreground">
+                  No attendance records for this month
                 </p>
               )}
             </CardContent>
