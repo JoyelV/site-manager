@@ -113,8 +113,11 @@ const Dashboard = () => {
             const monthRecords: DailyRecord[] = Array.isArray(rangeJson) ? rangeJson : (rangeJson.records || []);
 
             const workerDays = monthRecords.reduce((acc: Record<string, number>, r) => {
-              if (r.status > 0) {
-                acc[r.worker._id] = (acc[r.worker._id] || 0) + r.status;
+              if (r && r.status > 0 && r.worker) {
+                const workerId = typeof r.worker === "object" ? r.worker._id : String(r.worker);
+                if (workerId) {
+                  acc[workerId] = (acc[workerId] || 0) + r.status;
+                }
               }
               return acc;
             }, {});
@@ -215,10 +218,10 @@ const Dashboard = () => {
                       className="flex items-center justify-between p-4 bg-secondary/50 rounded-xl hover:bg-secondary/80 transition"
                     >
                       <div>
-                        <h3 className="font-semibold text-lg">{/* {site.siteRefName} */}</h3>
+                        <h3 className="font-semibold text-lg">{site.siteRefName}</h3>
                         <p className="text-sm text-muted-foreground">
-                          {/* {site.clientName} */}
-                          {/* {site.location && ` • ${site.location}`} */}
+                          {site.clientName}
+                          {site.location && ` • ${site.location}`}
                         </p>
                       </div>
                       <span className="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
@@ -250,12 +253,12 @@ const Dashboard = () => {
                           {i + 1}
                         </div>
                         <div>
-                          <p className="font-medium">{/* {worker.name} */}</p>
-                          <p className="text-sm text-muted-foreground">{/* {worker.empNo} */}</p>
+                          <p className="font-medium">{worker.name}</p>
+                          <p className="text-sm text-muted-foreground">{worker.empNo}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-2xl font-bold text-primary">{/* {worker.days} */}</p>
+                        <p className="text-2xl font-bold text-primary">{worker.days}</p>
                         <p className="text-xs text-muted-foreground">days worked</p>
                       </div>
                     </div>
@@ -263,6 +266,7 @@ const Dashboard = () => {
                 </div>
               ) : (
                 <p className="text-center py-16 text-muted-foreground">
+                  No attendance records for this month
                 </p>
               )}
             </CardContent>

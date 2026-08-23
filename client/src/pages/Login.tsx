@@ -41,10 +41,10 @@ const Login = () => {
       if (response.ok && data.accessToken) {
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("isAuthenticated", "true");
-        // toast({ title: "Login Successful", description: "Welcome!" });
-        // navigate("/dashboard");
+        toast({ title: "Login Successful", description: "Welcome!" });
+        navigate("/dashboard");
       } else {
-        toast({
+        toast({ 
           title: "Login Failed",
           description: data.msg || "Invalid email or password",
           variant: "destructive",
