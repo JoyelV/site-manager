@@ -893,17 +893,17 @@ const Workers = () => {
                           <TableBody>
                             {advances.map((adv) => (
                               <TableRow key={adv._id}>
-                                <TableCell>{/* {new Date(adv.dateGiven).toLocaleDateString()} */}</TableCell>
+                                <TableCell>{new Date(adv.dateGiven).toLocaleDateString()}</TableCell>
                                 <TableCell className="text-right font-medium">
-                                  {/* {adv.amount.toLocaleString()} */}
+                                  {adv.amount.toLocaleString()}
                                 </TableCell>
                                 <TableCell>
-                                  {/* <span className={`px-3 py-1 rounded-full text-xs font-medium ${adv.status === "deducted"
+                                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${adv.status === "deducted"
                                     ? "bg-green-100 text-green-800"
                                     : "bg-orange-100 text-orange-800"
                                     }`}>
                                     {adv.status}
-                                  </span> */}
+                                  </span>
                                 </TableCell>
                               </TableRow>
                             ))}
@@ -1012,10 +1012,10 @@ const Workers = () => {
                       {workers.map((worker) => (
                         <TableRow key={worker._id}>
                           <TableCell className="font-medium">
-                            {/* {worker.employeeNo} */}
+                            {worker.employeeNo}
                           </TableCell>
                           <TableCell>
-                            {/* {`${worker.firstName} ${worker.lastName}`} */}
+                            {worker.firstName} {worker.lastName}
                             {worker.isActive === false && (
                               <span className="ml-2 px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-[10px] font-medium">
                                 Inactive
@@ -1023,10 +1023,10 @@ const Workers = () => {
                             )}
                           </TableCell>
                           <TableCell>
-                            {/* AED {worker.basicSalary.toLocaleString()} */}
+                            AED {worker.basicSalary.toLocaleString()}
                           </TableCell>
                           <TableCell>
-                            {/* AED {worker.allowance.toLocaleString()} */}
+                            AED {worker.allowance.toLocaleString()}
                           </TableCell>
                           <TableCell className="text-right space-x-2">
                             <Button
